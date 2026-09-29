@@ -1,0 +1,44 @@
+/******************************************************************************
+Emanuele moscato 1sin3
+Un negozio effettua uno sconto del 50% sul secondo prodotto che compri pagando il primo a prezzo intero: naturalmente si paga a prezzo intero il prodotto più costoso.
+Scrivi un programma che, leggendo in input i prezzi dei due prodotti acquistati, calcola il totale da pagare.
+Indicare, inoltre, l'effettiva percentuale di sconto ricevuto.
+*******************************************************************************/
+#include <stdio.h>
+
+int main() {
+     float prezzo1, prezzo2;
+     float totale_originale, totale_pagare;
+     float sconto, percentuale_sconto;
+
+    
+    printf("Inserisci il prezzo del primo prodotto: ");
+    scanf("%f", &prezzo1);
+
+    printf("Inserisci il prezzo del secondo prodotto: ");
+    scanf("%f", &prezzo2);
+
+   
+    totale_originale = prezzo1 + prezzo2;
+
+   
+    if (prezzo1 < prezzo2) {
+        sconto = prezzo1 * 0.5;
+    } else {
+        sconto = prezzo2 * 0.5;
+    }
+
+    
+    totale_pagare = totale_originale - sconto;
+
+    
+    percentuale_sconto = (sconto / totale_originale) * 100;
+
+    
+    printf("\nTotale originale: euro\n", totale_originale);
+    printf("Totale da pagare: euro\n", totale_pagare);
+    printf("Percentuale effettiva di sconto: \n", percentuale_sconto);
+
+    return 0;
+}
+
